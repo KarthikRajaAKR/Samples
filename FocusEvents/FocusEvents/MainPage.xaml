@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FocusEvents.MainPage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="0.5*"/>
+        </Grid.ColumnDefinitions>
+        
+        <VerticalStackLayout Background="GreenYellow"
+            Spacing="25"
+            Padding="30,0" 
+            Focused="OnLayoutOneFocused"
+            Unfocused="OnLayoutOneUnfocused"
+            VerticalOptions="Center">
+
+            <Button
+                x:Name="CounterBtn" 
+                Focused="Button_Focused" 
+                Unfocused="Button_Unfocused"
+                Text="Button one"
+                SemanticProperties.Hint="Counts the number of times you click"
+                HorizontalOptions="Center" />
+
+        </VerticalStackLayout>
+
+        <VerticalStackLayout Background="LightBlue" Grid.Column="1"
+            Spacing="25"
+            Padding="30,0" 
+            Focused="OnLayoutTwoFocused"
+            Unfocused="OnLayoutTwoUnfocused"
+            VerticalOptions="Center">
+
+            <Button
+                Focused="Button_Focused" 
+                Unfocused="Button_Unfocused"
+                Text="Button Two"
+                SemanticProperties.Hint="Counts the number of times you click"
+                HorizontalOptions="Center" />
+
+        </VerticalStackLayout>
+    </Grid>
+
+</ContentPage>
