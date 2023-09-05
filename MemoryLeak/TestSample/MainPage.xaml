@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:TestSample;assembly=TestSample"
+             x:Class="TestSample.MainPage">
+
+    <ContentPage.Resources>
+        <local:SlotsView x:Key="slotsView" />
+    </ContentPage.Resources>
+
+    <Grid RowDefinitions="0.1*, 0.9*">
+        <Button x:Name="Invalidate" Text="Invalidate" Clicked="OnInvalidateClicked" HorizontalOptions="Center" />
+        
+        <ScrollView x:Name="scrollView"  Orientation="Horizontal" Grid.Row="1" >
+            <Grid RowDefinitions="100, *">
+                <HorizontalStackLayout>
+                    <GraphicsView  Drawable="{StaticResource slotsView}" WidthRequest="3600" x:Name="header1" HeightRequest="100"/>
+                    <GraphicsView Drawable="{StaticResource slotsView}" WidthRequest="3600" x:Name="header2" HeightRequest="100"/>
+                    <GraphicsView Drawable="{StaticResource slotsView}" WidthRequest="3600" x:Name="header3" HeightRequest="100"/>
+                </HorizontalStackLayout>
+                
+                <HorizontalStackLayout Grid.Row="1">
+                    <GraphicsView Drawable="{StaticResource slotsView}" WidthRequest="3600" x:Name="view1" HeightRequest="2000"/>
+                    <GraphicsView Drawable="{StaticResource slotsView}" WidthRequest="3600" x:Name="view2" HeightRequest="2000"/>
+                    <GraphicsView Drawable="{StaticResource slotsView}" WidthRequest="3600" x:Name="view3" HeightRequest="2000"/>
+                </HorizontalStackLayout>
+            </Grid>
+        </ScrollView>
+            
+        
+        </Grid>
+
+</ContentPage>
